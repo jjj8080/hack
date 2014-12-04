@@ -85,6 +85,40 @@ public class ReadManager {
 		        pos = str.indexOf(c, pos+1);
 		    return pos;
 		}
+			public static void parsejsn(String data) { 
+			
+		//trade id
+		System.out.println(data.substring(nthOccurrence(data, '"', 1)+2, (nthOccurrence(data, '"', 1))));
+		
+		// version id
+		System.out.println(data.substring(nthOccurrence(data, '"', 3)+2, (nthOccurrence(data, '"', 3))));
+		
+		//counterparty id
+		System.out.println(data.substring(nthOccurrence(data, '"', 5)+2, (nthOccurrence(data, '"', 7))));
+
+		
+		// trader id
+		System.out.println(data.substring(nthOccurrence(data, '"', 11)+2, (nthOccurrence(data, '"', 9))));
+		
+		//book name
+		System.out.println(data.substring(data.lastIndexOf("<book>")+6, data.indexOf("</book>")));
+		
+		//timestamp
+		System.out.println(data.substring(data.lastIndexOf("<timestamp>")+11, data.indexOf("</timestamp>")));
+		
+		//product type
+		System.out.println(data.substring(nthOccurrence(data, '"', 10)+1, (nthOccurrence(data, '"', 11))));
+		
+		//buy ccy 
+		System.out.println(data.substring(data.indexOf("<ccy>")+5,data.indexOf("</ccy>")));
+		
+		// amount
+		System.out.println(data.substring(data.indexOf("<amount>")+8,data.indexOf("</amount>")));
+		
+		// sell ccy
+		System.out.println(data.substring(data.indexOf("<sell>")+8,data.indexOf("</sell>")-5));
+
+		
 
 
 		}
